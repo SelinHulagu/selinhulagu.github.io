@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selin Hülagü</title>
+<meta name="description" content="Selin Hülagü — PhD candidate in Operations Analytics at Vrije Universiteit Amsterdam. Exact algorithms, vehicle routing and sustainable supply chains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#00519E;      /* vublue  */
+    --dark:#122A4A;      /* vudark  */
+    --accent:#009688;    /* accent  */
+    --soft:#EEF3F9;      /* soft    */
+    --grey:#78828C;      /* ggrey   */
+    --text:#2B3440;
+    --line:#DDE4EC;
+    --bg:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font:16px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;color:var(--dark);font-weight:600;margin:0}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;
+        display:grid;grid-template-columns:280px 1fr;gap:56px}
+
+  /* ---------- sidebar ---------- */
+  aside{position:sticky;top:0;align-self:start;padding:48px 0 32px}
+  .photo{width:100%;max-width:220px;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
+  aside h1{font-size:1.9rem;line-height:1.2;margin-top:22px}
+  .role{color:var(--dark);font-weight:500;margin-top:6px}
+  .aff{color:var(--grey);font-size:.9rem;margin-top:4px;line-height:1.5}
+  .links{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--line)}
+  .links li{border-bottom:1px solid var(--line)}
+  .links a{display:flex;justify-content:space-between;padding:8px 2px;font-size:.92rem;color:var(--dark)}
+  .links a span{color:var(--grey)}
+  .links a:hover{color:var(--blue);text-decoration:none}
+  .cv{display:inline-block;margin-top:20px;padding:9px 18px;background:var(--blue);color:#fff;
+      border-radius:4px;font-weight:500;font-size:.92rem}
+  .cv:hover{background:var(--dark);text-decoration:none}
+  nav{margin-top:28px;display:flex;flex-direction:column;gap:2px;font-size:.88rem}
+  nav a{color:var(--grey)} nav a:hover{color:var(--blue)}
+
+  /* ---------- content ---------- */
+  main{padding:48px 0 80px}
+  section{padding:8px 0 36px}
+  section+section{border-top:1px solid var(--line);padding-top:36px}
+  h2{font-size:1.45rem;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  h2::before{content:"";width:4px;height:1.1em;background:var(--accent);border-radius:2px}
+  .lead{font-size:1.06rem}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding:0;list-style:none}
+  .tags li{background:var(--soft);color:var(--dark);padding:5px 12px;border-radius:999px;font-size:.86rem}
+
+  .news{background:var(--soft);border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 4px 4px 0;margin-top:22px;font-size:.95rem}
+  .news strong{color:var(--dark)}
+
+  h3.sub{font-size:1.02rem;font-family:"IBM Plex Sans",sans-serif;font-weight:600;color:var(--grey);
+         text-transform:uppercase;letter-spacing:.06em;margin:26px 0 12px}
+  h3.sub:first-of-type{margin-top:0}
+  .pubs{list-style:none;padding:0;margin:0}
+  .pubs li{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .pubs li:last-child{border-bottom:0}
+  .pt{font-weight:500;color:var(--dark)}
+  .pa{font-size:.92rem}
+  .pa b{font-weight:600;color:var(--text)}
+  .pv{font-size:.9rem;color:var(--grey)}
+  .pv i{color:var(--text)}
+  .badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.03em;padding:1px 8px;border-radius:3px;
+         margin-left:6px;vertical-align:1px}
+  .b-rev{background:#FFF1E6;color:#B4561B}
+  .b-doi{background:var(--soft);color:var(--blue)}
+
+  .tl{list-style:none;padding:0;margin:0}
+  .tl li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:9px 0}
+  .tl .y{color:var(--grey);font-size:.9rem;padding-top:1px}
+  .tl .w{font-weight:500;color:var(--dark)}
+  .tl .d{font-size:.92rem;color:var(--grey)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .plain{padding-left:18px;margin:0}
+  .plain li{margin:4px 0}
+  .muted{color:var(--grey);font-size:.9rem}
+
+  footer{border-top:1px solid var(--line);padding:22px 0 0;color:var(--grey);font-size:.85rem}
+
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;gap:0}
+    aside{position:static;padding-top:32px;text-align:left}
+    .photo{max-width:160px}
+    nav{display:none}
+    main{padding-top:16px}
+    .two{grid-template-columns:1fr}
+    .tl li{grid-template-columns:1fr;gap:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside>
+    <img class="photo" src="photo.jpg" alt="Selin Hülagü">
+    <h1>Selin Hülagü</h1>
+    <div class="role">PhD Candidate in Operations Analytics</div>
+    <div class="aff">School of Business and Economics<br>Vrije Universiteit Amsterdam</div>
+
+    <ul class="links">
+      <li><a href="mailto:s.h.huelague@vu.nl">Email <span>s.h.huelague@vu.nl</span></a></li>
+      <!-- TODO: replace the # with your own profile links -->
+      <li><a href="#">Google Scholar <span>↗</span></a></li>
+      <li><a href="#">ORCID <span>↗</span></a></li>
+      <li><a href="#">LinkedIn <span>↗</span></a></li>
+      <li><a href="#">VU Research Profile <span>↗</span></a></li>
+    </ul>
+    <a class="cv" href="cv.pdf">Download CV (PDF)</a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#teaching">Teaching &amp; Supervision</a>
+      <a href="#background">Background</a>
+    </nav>
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="lead">I am a PhD candidate in Operations Analytics at Vrije Universiteit Amsterdam, working on quantitative sustainability and mathematical optimization. My research develops decision models and exact algorithms for sustainable supply chains and logistics networks, combining branch-cut-and-price, life-cycle assessment and real-world operational data.</p>
+      <p>Before joining VU, I was a research and teaching assistant in the Transportation Division at Istanbul Technical University, where I worked on electric and environment-friendly vehicle routing. I expect to defend my PhD in March 2027.</p>
+      <ul class="tags">
+        <li>Branch-cut-and-price</li>
+        <li>Vehicle routing</li>
+        <li>Mixed-integer programming</li>
+        <li>Sustainable supply chains</li>
+        <li>Life-cycle assessment</li>
+        <li>Data-driven decision-making</li>
+      </ul>
+      <div class="news"><strong>INFORMS Annual Meeting 2026</strong> — I am presenting <em>Branch-Cut-and-Price for the Vehicle Routing Problem with Multiple Time Windows</em> in San Francisco, 1–4 November 2026. <a href="#talks">Details ↓</a></div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <h3 class="sub">Working papers</h3>
+      <ul class="pubs">
+        <li>
+          <div class="pt">Branch-cut-and-price for the vehicle routing problem with multiple time windows <span class="badge b-rev">Under review</span></div>
+          <div class="pa"><b>S. Hülagü</b>, W. Dullaert, S. Dabia, M. Hoogeboom</div>
+          <div class="pv"><i>Transportation Science</i> · <!-- TODO: arXiv link --><a href="#">arXiv</a></div>
+        </li>
+        <li>
+          <div class="pt">Integrating supply chain life cycle decisions: Empirical model validation for a large-scale case <span class="badge b-rev">Under revision</span></div>
+          <div class="pa"><b>S. Hülagü</b>, W. Dullaert, A. S. Eruguz, R. Heijungs, D. Inghels</div>
+          <div class="pv"><i>Journal of Cleaner Production</i></div>
+        </li>
+      </ul>
+
+      <h3 class="sub">Journal articles</h3>
+      <ul class="pubs">
+        <li>
+          <div class="pt">An exact algorithm for the vehicle routing problem with time windows and perishable products</div>
+          <div class="pa"><b>S. Hülagü</b>, C. Ciancio, S. Dabia, W. Dullaert</div>
+          <div class="pv"><i>Transportation Science</i>, Articles in Advance, 2026 <a class="badge b-doi" href="https://doi.org/10.1287/trsc.2025.0262">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Integrating life cycle assessment into supply chain optimization</div>
+          <div class="pa"><b>S. Hülagü</b>, W. Dullaert, A. S. Eruguz, R. Heijungs, D. Inghels</div>
+          <div class="pv"><i>PLOS ONE</i>, 20(1), e0316710, 2025 <a class="badge b-doi" href="https://doi.org/10.1371/journal.pone.0316710">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Electric vehicle location routing problem with vehicle motion dynamics-based energy consumption and recovery</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>IEEE Transactions on Intelligent Transportation Systems</i>, 23(8), 10275–10286, 2022 <a class="badge b-doi" href="https://doi.org/10.1109/TITS.2021.3089675">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Environment-friendly school bus routing problem with heterogeneous fleet: A large-scale real case</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>IEEE Transactions on Intelligent Transportation Systems</i>, 23(4), 3461–3471, 2022 <a class="badge b-doi" href="https://doi.org/10.1109/TITS.2020.3036696">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">An electric vehicle routing problem with intermediate nodes for shuttle fleets</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>IEEE Transactions on Intelligent Transportation Systems</i>, 23(2), 1223–1235, 2022 <a class="badge b-doi" href="https://doi.org/10.1109/TITS.2020.3023673">DOI</a></div>
+        </li>
+      </ul>
+
+      <h3 class="sub">Conference proceedings &amp; book chapters</h3>
+      <ul class="pubs">
+        <li>
+          <div class="pt">A methodology to consider explicitly emissions in dynamic user equilibrium assignment</div>
+          <div class="pa">M. A. Silgu, I. G. Erdağı, <b>S. Hülagü</b>, S. Akti, H. Akova, G. Akyol, S. Göncü, G. Göksu, H. B. Çelikoğlu</div>
+          <div class="pv"><i>EUROCAST 2022</i>, LNCS 13789, Springer, 2022 <a class="badge b-doi" href="https://doi.org/10.1007/978-3-031-25312-6_42">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Effects of energy consumption on cost optimal recharging station locations for e-scooters</div>
+          <div class="pa">H. Akova, <b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>MT-ITS 2021</i>, IEEE, 2021 <a class="badge b-doi" href="https://doi.org/10.1109/MT-ITS49943.2021.9529282">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Electrified location routing problem with energy consumption for resources restricted archipelagos: Case of Buyukada</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>FISTS 2020</i>, IEEE, 2020 <a class="badge b-doi" href="https://doi.org/10.1109/FISTS46898.2020.9264865">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">A mixed integer linear programming formulation for green vehicle routing problem: Case for shuttle services</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>EUROCAST 2019</i>, LNCS 12014, Springer, 2020 <a class="badge b-doi" href="https://doi.org/10.1007/978-3-030-45096-0_19">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">Green routing plan for university shuttle services using mixed integer linear programming</div>
+          <div class="pa"><b>S. Hülagü</b>, G. Atasavar, H. B. Çelikoğlu</div>
+          <div class="pv"><i>IEEE RTSI 2019</i>, 2019 <a class="badge b-doi" href="https://doi.org/10.1109/RTSI.2019.8895571">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">A multiple objective formulation of an electric vehicle routing problem for shuttle bus fleet at a university campus</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>MT-ITS 2019</i>, IEEE, 2019 <a class="badge b-doi" href="https://doi.org/10.1109/MTITS.2019.8883344">DOI</a></div>
+        </li>
+        <li>
+          <div class="pt">An integer linear programming formulation for routing problem of university bus service</div>
+          <div class="pa"><b>S. Hülagü</b>, H. B. Çelikoğlu</div>
+          <div class="pv"><i>New Trends in Emerging Complex Real Life Problems</i>, AIRO Springer Series 1, 2018 <a class="badge b-doi" href="https://doi.org/10.1007/978-3-030-00473-6_33">DOI</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="talks">
+      <h2>Talks</h2>
+      <ul class="tl">
+        <li><div class="y">Nov 2026</div><div><div class="w">Branch-Cut-and-Price for the Vehicle Routing Problem with Multiple Time Windows</div><div class="d">INFORMS Annual Meeting, San Francisco, CA</div></div></li>
+        <!-- add earlier talks here, same format -->
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching &amp; Supervision</h2>
+      <div class="two">
+        <div>
+          <h3 class="sub">Teaching</h3>
+          <p class="muted" style="margin:0 0 8px">Tutorials, exam and course support</p>
+          <ul class="plain">
+            <li>Programming for Artificial Intelligence <span class="muted">VU, 2024–</span></li>
+            <li>Artificial Intelligence Theory <span class="muted">VU, 2024–</span></li>
+            <li>Sustainable Business Processes <span class="muted">VU, 2022–</span></li>
+            <li>Global Sustainability <span class="muted">VU, 2022–</span></li>
+            <li>E-Commerce Supply Chain Management <span class="muted">VU, 2022–24</span></li>
+            <li>Intelligent Transportation Systems <span class="muted">ITU, 2019–22</span></li>
+            <li>Operations Research in Transportation <span class="muted">ITU, 2022</span></li>
+            <li>Highway &amp; Railway Engineering <span class="muted">ITU, 2017–22</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub">Thesis supervision</h3>
+          <p style="margin:0 0 8px">Supervised <b>6 BSc theses</b> (main supervisor) and co-supervised <b>5 MSc theses</b> at VU Amsterdam and TU Delft, on topics including humanitarian logistics, circular supply chains, life-cycle optimization under uncertainty and last-mile delivery.</p>
+          <h3 class="sub" style="margin-top:22px">Service</h3>
+          <p style="margin:0">Reviewer for <i>IEEE Transactions on Intelligent Transportation Systems</i> and <i>IEEE Intelligent Transportation Systems Magazine</i>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <h2>Background</h2>
+      <ul class="tl">
+        <li><div class="y">2022 – 2026</div><div><div class="w">PhD, Operations Analytics</div><div class="d">Vrije Universiteit Amsterdam · expected defence March 2027</div></div></li>
+        <li><div class="y">2017 – 2022</div><div><div class="w">Research &amp; Teaching Assistant, Transportation Division</div><div class="d">Istanbul Technical University</div></div></li>
+        <li><div class="y">2017 – 2020</div><div><div class="w">MSc, Civil Engineering (Transportation)</div><div class="d">Istanbul Technical University</div></div></li>
+        <li><div class="y">2015 – 2017</div><div><div class="w">MSc, Civil Engineering (Construction Management)</div><div class="d">Ege University</div></div></li>
+        <li><div class="y">2010 – 2015</div><div><div class="w">BSc, Civil Engineering</div><div class="d">Ege University · Erasmus exchange at TH Mittelhessen, Gießen (2013)</div></div></li>
+      </ul>
+      <p class="muted" style="margin-top:14px">Also: 2025 School on Column Generation (GERAD / CNAM, Paris) · Metaheuristics Summer School 2021 (Catania) · Research projects funded by TÜBİTAK (218M307) and EU Horizon 2020 (HIT2GAP).</p>
+    </section>
+
+    <footer>© 2026 Selin Hülagü · Last updated October 2026</footer>
+  </main>
+</div>
+</body>
+</html>
